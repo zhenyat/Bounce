@@ -5,6 +5,8 @@
 #
 #   11.02.2019  Created by: zhenya
 ################################################################################
+from ball import *
+
 class Game():
     def __init__(self):
         pass
