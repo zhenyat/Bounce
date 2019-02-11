@@ -26,7 +26,8 @@ class GameGUI():
     
         self.ball = Ball(self.canvas, 'red')
 
-        
+        game.go(self)
+
     # Locates GUI window in the center of a screen
     def center(self):
         masterWidth  = 800
