@@ -1,11 +1,18 @@
 ################################################################################
 #   bounce.py
 #
-#   <Module Purpose>
+#   App main module
 #
 #   11.02.2019  Created by: zhenya
 ################################################################################
+from application    import *
+from my_lib.logbook import *
 
 if __name__ == "__main__":
-  print("Author: zhenya")
-  print("Date:   Feb 11, 2019 3:06:55 PM")
+    Logbook.log("Game is starting")
+  
+    app = Application()
+  
+    app.root.mainloop()
+  
+    Logbook.log("Game is over")
