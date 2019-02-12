@@ -10,8 +10,8 @@ import random
 class Ball():
     def __init__(self, canvas, color):
         self.canvas  = canvas
-        self.id = canvas.create_oval(10, 10, 25, 25, fill=color, outline=color)  # 10,10 - top-left
-                                                                                 # 25,25 - bottom-right
+        self.id = canvas.create_oval(10, 10, 25, 25, fill=color, outline=color)  # x1, y1: 10,10 - top-left
+                                                                                 # x2, y2: 25,25 - bottom-right
         self.canvas.move(self.id, 245, 100)
         
         # Canvas boundaries
@@ -29,7 +29,8 @@ class Ball():
         self.canvas.move(self.id, self.x, self.y)
         pos = self.canvas.coords(self.id)         # Ball object coordinates (x1,y1, x2,y2)
                                                   #                 pos[i]:   0  1   2  3
-        if (pos[1] <= 0 or pos[3] >= self.canvas_height):
+        # Check canvas borders
+        if (pos[1] <= 0 or pos[3] >= self.canvas_height):   # Top / Bottom reached
             self.y = -self.y
-        if (pos[0] <= 0 or pos[2] >= self.canvas_width):
+        if (pos[0] <= 0 or pos[2] >= self.canvas_width):    # Left / Right reached
             self.x = -self.x

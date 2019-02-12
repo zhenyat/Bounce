@@ -18,7 +18,8 @@ class Game():
         try:
             while(True):
                 gui_object.ball.move()
+                gui_object.bat.move()
                 gui_object.master.update() 
-                time.sleep(0.1)
+                time.sleep(0.05)
         except:
-            Logbook.log("Game has been aborted")
+            Logbook.log("Game has been aborted")            
