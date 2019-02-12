@@ -14,6 +14,10 @@ class Ball():
                                                                                  # 25,25 - bottom-right
         self.canvas.move(self.id, 245, 100)
         
+        # Canvas boundaries
+        self.canvas_height = self.canvas.winfo_height()
+        self.canvas_width  = self.canvas.winfo_width()
+        
         # Ball starting movement vector
         x_starting = [-3, -2, -1, 1, 2, 3]
         random.shuffle(x_starting)
@@ -23,3 +27,9 @@ class Ball():
     # Moves Canvas' object on x and y
     def move(self):
         self.canvas.move(self.id, self.x, self.y)
+        pos = self.canvas.coords(self.id)         # Ball object coordinates (x1,y1, x2,y2)
+                                                  #                 pos[i]:   0  1   2  3
+        if (pos[1] <= 0 or pos[3] >= self.canvas_height):
+            self.y = -self.y
+        if (pos[0] <= 0 or pos[2] >= self.canvas_width):
+            self.x = -self.x
