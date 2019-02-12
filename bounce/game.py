@@ -8,6 +8,7 @@
 import time
 from my_lib.logbook import *
 from ball           import *
+from bat            import *
 
 class Game():
     def __init__(self):
