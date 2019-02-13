@@ -9,6 +9,8 @@ import random
 
 class Ball():
     def __init__(self, canvas, color):
+        self.hit_bottom = False
+        
         self.canvas  = canvas
         self.id = canvas.create_oval(10, 10, 25, 25, fill=color, outline=color)  # x1, y1: 10,10 - top-left
                                                                                  # x2, y2: 25,25 - bottom-right
