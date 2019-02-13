@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup (
     name='Bounce',
-    version='0.8',
+    version='0.9',
     packages=find_packages(),
 
     # Declare your packages' dependencies here, for eg:

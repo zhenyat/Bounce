@@ -25,7 +25,7 @@ class GameGUI():
         self.master.update()         # Initializes itself for the game animation
     
         self.ball = Ball(self.canvas, 'red')
-        self.bat  = Bat(self.canvas, 'blue')
+        self.bat  = Bat(self.canvas,  'blue')
 
         game.go(self)
 
